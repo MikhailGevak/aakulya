@@ -71,8 +71,6 @@ class Cache[V](val cacheName: String, storageCreator: () => Storage[V], val init
     storage.getObject(key) match {
       case None =>
         None
-      case Some(element) if isExpired(element) =>
-        None
       case Some(element) =>
         Some(element.instance)
     }
@@ -89,8 +87,4 @@ class Cache[V](val cacheName: String, storageCreator: () => Storage[V], val init
   def size = storage.size
 
   def clear = storage.clear
-
-  private def isExpired(element: Element[V]) = {
-    element.isExpired
-  }
 }

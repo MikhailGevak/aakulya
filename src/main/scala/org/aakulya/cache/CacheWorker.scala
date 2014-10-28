@@ -53,7 +53,7 @@ class CacheWorker[V](val name: String, cacheFunction: WorkerParams => V, cacheSe
 
   def getValue(params: WorkerParams): V = {
     val key = params.cacheKey
-    cache.get(key) match {
+    val value = cache.get(key) match {
       case Some(value) =>
         println(s"Get value from cache ($key -> $value)")
         value
@@ -67,6 +67,9 @@ class CacheWorker[V](val name: String, cacheFunction: WorkerParams => V, cacheSe
         }
         value
     }
+    
+     println("Storage: " + cache.storage)
+     value
   }
 
   def addAutoUpdatedTask(params: WorkerParams) {

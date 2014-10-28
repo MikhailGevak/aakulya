@@ -34,13 +34,13 @@ object TestFunction {
 }
 @org.junit.runner.RunWith(classOf[org.scalatest.junit.JUnitRunner])
 class CacheSystemTest extends TestKit(ActorSystem()) with FunSuiteLike with ImplicitSender with Matchers {
-import TestFunction._
+  import TestFunction._
   implicit val timeout = Timeout(60 seconds)
   val TEST_NAME = "testCache"
-  
+
   test("value should be stored in cache system") {
     val cachedSystem = new CacheSystem("testCacheSystem")
-    
+
     cachedSystem.putCacheWorker(TEST_NAME, TestFunction.currentTime(_))(() => new StorageByMap[Long])
 
     cachedSystem.sendMessage(TEST_NAME, TimeParams())
@@ -134,21 +134,20 @@ import TestFunction._
     }.size
 
     Thread.sleep(2100)
-    
+
     cachedSystem.getCacheWorker(TEST_NAME).get ! GetCacheRequest()
     val cacheSize2 = expectMsgPF() {
       case GetCacheResponse(x: Cache[_]) => x
     }.size
-    
-    
+
     println(cacheSize1)
     println(cacheSize2)
-    
+
     cacheSize1 should be(1)
     cacheSize2 should be(0)
   }
-  
-   test("value should be auto updated") {
+
+  test("value should be auto updated") {
     val cachedSystem = new CacheSystem("testCacheSystem")
 
     cachedSystem.putCacheWorker(TEST_NAME, TestFunction.currentTime(_), CacheSettings().setDuration(2 seconds).setAutoUpdated(true))(() => new StorageByMap[Long])
@@ -168,12 +167,11 @@ import TestFunction._
     }.get(TimeParams().cacheKey).get.asInstanceOf[Long]
 
     Thread.sleep(2000)
-   cachedSystem.getCacheWorker(TEST_NAME).get ! GetCacheRequest()
+    cachedSystem.getCacheWorker(TEST_NAME).get ! GetCacheRequest()
 
     val value3 = expectMsgPF() {
       case GetCacheResponse(x: Cache[_]) => x
     }.get(TimeParams().cacheKey).get.asInstanceOf[Long]
-
 
     cachedSystem.shutdown
 
@@ -183,6 +181,38 @@ import TestFunction._
 
     value1 should be(value2)
     value3 should be > value2
+  }
+
+  test("element in cache should know how many time it has been touched") {
+    val cachedSystem = new CacheSystem("testCacheSystem")
+
+    cachedSystem.putCacheWorker(TEST_NAME, TestFunction.currentTime(_), CacheSettings().setDuration(2 seconds).setAutoUpdated(true))(() => new StorageByMap[Long])
+
+    cachedSystem.sendMessage(TEST_NAME, TimeParams())
+
+    val value1 = expectMsgPF() {
+      case GetValueResponse(TimeParams(), x: Long) => x
+    }
+
+    cachedSystem.sendMessage(TEST_NAME, TimeParams())
+
+    val value2 = expectMsgPF() {
+      case GetValueResponse(TimeParams(), x: Long) => x
+    }
+
+    cachedSystem.getCacheWorker(TEST_NAME).get ! GetCacheRequest()
+
+    val value3 = expectMsgPF() {
+      case GetCacheResponse(x: Cache[_]) => x
+    }.storage.getObject(TimeParams().cacheKey).get.accessCount
+
+    Thread.sleep(2000)
+
+    println(value1)
+    println(value2)
+    println(value3)
+    
+    value3 should be(2)
   }
 
 }

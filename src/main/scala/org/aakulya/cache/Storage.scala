@@ -11,6 +11,8 @@ object Element {
 class Element[V](val instance: V, val created: Long, val duration: FiniteDuration){
   private var _accessed = created
   private var _accessCount = 0
+  private var nextElementKey: Option[String] = _
+  private var prevElementKey: Option[String] = _
   
   def accessed = _accessed
   def accessCount = _accessCount
@@ -24,28 +26,49 @@ class Element[V](val instance: V, val created: Long, val duration: FiniteDuratio
   def isExpired = {
     created + duration.toMillis < System.currentTimeMillis()
   }
+  
+  def rate = created/_accessCount
+  
+  override def toString = s"(instance=$instance, accessCount=$accessCount)"
 }
 
 trait Storage[V] {
-	final def getObject(key: String): Option[Element[V]] = {
+    final def getObject(key: String): Option[Element[V]] = {
 	  val element = _getObject(key)
 	  
 	  element match{
 	    case Some(element) => 
-	     _putObject(key, element.doAccess)
+	     putObject(key, element.doAccess)
 	    case None => 
 	      None
 	  }
 	}
 	
 	final def putObject(key: String, obj: Element[V]): Option[Element[V]] = { 
+	   if (size == 0){
+	     setFirstElementKey(key)
+	   }
 	  _putObject(key, obj)
+	}
+	
+	final def removeObject(key: String) = {
+	  _removeObject(key)
 	}
 	
 	protected def _getObject(key: String): Option[Element[V]] 
 	protected def _putObject(key: String, obj: Element[V]):Option[Element[V]]
+	protected def _removeObject(key: String)
 	
-	def removeObject(key: String)
 	def clear
 	def size: Int
+	
+	def setFirstElementKey(elementKey: String)
+	def firstElementKey: Option[String]
+	
+	def firstElement: Option[Element[V]] = {
+		firstElementKey match{
+			case Some(key) => _getObject(key)
+			case None => None
+		}
+	}
 }
