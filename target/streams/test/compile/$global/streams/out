@@ -1,0 +1,62 @@
+[0m[[0mdebug[0m] [0mThe aakulya.CachedFunction$ source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m	notify, CacheBuilder, duration, autoUpdate, wait, $asInstanceOf, equals, asInstanceOf, &, synchronized, $isInstanceOf, notifyAll, CacheSettings, isInstanceOf, <init>, apply$default$2, apply, ==, clone, apply$default$1, toString, !=, getClass, ne, cacheSettings, eq, ##, finalize, hashCode.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mFiles invalidated by inheriting from (external) aakulya.CachedFunction$: Set(); now invalidating by inheritance (internally).[0m
+[0m[[0mdebug[0m] [0mGetting direct dependencies of all sources transitively invalidated by inheritance.[0m
+[0m[[0mdebug[0m] [0mGetting sources that directly depend on (external) aakulya.CachedFunction$.[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of /home/mykhailoge/eclipse/aakulya/aakulya2/src/test/scala/aakulya/CacheActorTest.scala: Set(duration, &, CacheSettings, <init>, apply)[0m
+[0m[[0mdebug[0m] [0mThe aakulya.CachedFunction source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m	notify, CacheBuilder, duration, autoUpdate, wait, $asInstanceOf, equals, asInstanceOf, &, synchronized, $isInstanceOf, notifyAll, CacheSettings, isInstanceOf, <init>, apply$default$2, apply, ==, clone, apply$default$1, toString, !=, getClass, ne, cacheSettings, eq, ##, finalize, hashCode.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mFiles invalidated by inheriting from (external) aakulya.CachedFunction: Set(); now invalidating by inheritance (internally).[0m
+[0m[[0mdebug[0m] [0mGetting direct dependencies of all sources transitively invalidated by inheritance.[0m
+[0m[[0mdebug[0m] [0mGetting sources that directly depend on (external) aakulya.CachedFunction.[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of /home/mykhailoge/eclipse/aakulya/aakulya2/src/test/scala/aakulya/CacheActorTest.scala: Set(duration, &, CacheSettings, <init>, apply)[0m
+[0m[[0mdebug[0m] [0mThe aakulya.CacheSettings$ source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m	notify, duration, autoUpdate, wait, $asInstanceOf, SimpleCachedFunction, CachedFunction, equals, asInstanceOf, &, synchronized, $isInstanceOf, >>, notifyAll, CacheSettings, fromCache, isInstanceOf, keyFunction, <init>, apply$default$2, calculate, apply, ==, clone, function, apply$default$1, toString, !=, getClass, ne, cacheSettings, eq, ##, finalize, hashCode.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mFiles invalidated by inheriting from (external) aakulya.CacheSettings$: Set(); now invalidating by inheritance (internally).[0m
+[0m[[0mdebug[0m] [0mGetting direct dependencies of all sources transitively invalidated by inheritance.[0m
+[0m[[0mdebug[0m] [0mGetting sources that directly depend on (external) aakulya.CacheSettings$.[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of /home/mykhailoge/eclipse/aakulya/aakulya2/src/test/scala/aakulya/CacheActorTest.scala: Set(duration, CachedFunction, &, >>, CacheSettings, <init>, apply)[0m
+[0m[[0mdebug[0m] [0mThe aakulya.CacheSettings source file has the following regular definitions changed:[0m
+[0m[[0mdebug[0m] [0m	notify, duration, autoUpdate, wait, $asInstanceOf, SimpleCachedFunction, CachedFunction, equals, asInstanceOf, &, synchronized, $isInstanceOf, >>, notifyAll, CacheSettings, fromCache, isInstanceOf, keyFunction, <init>, apply$default$2, calculate, apply, ==, clone, function, apply$default$1, toString, !=, getClass, ne, cacheSettings, eq, ##, finalize, hashCode.[0m
+[0m[[0mdebug[0m] [0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0mdebug[0m] [0mFiles invalidated by inheriting from (external) aakulya.CacheSettings: Set(); now invalidating by inheritance (internally).[0m
+[0m[[0mdebug[0m] [0mGetting direct dependencies of all sources transitively invalidated by inheritance.[0m
+[0m[[0mdebug[0m] [0mGetting sources that directly depend on (external) aakulya.CacheSettings.[0m
+[0m[[0mdebug[0m] [0mThe following modified names cause invalidation of /home/mykhailoge/eclipse/aakulya/aakulya2/src/test/scala/aakulya/CacheActorTest.scala: Set(duration, CachedFunction, &, >>, CacheSettings, <init>, apply)[0m
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mInitial source changes: [0m
+[0m[[0mdebug[0m] [0m	removed:Set()[0m
+[0m[[0mdebug[0m] [0m	added: Set()[0m
+[0m[[0mdebug[0m] [0m	modified: Set(/home/mykhailoge/eclipse/aakulya/aakulya2/src/test/scala/aakulya/CacheActorTest.scala)[0m
+[0m[[0mdebug[0m] [0mRemoved products: Set(/home/mykhailoge/eclipse/aakulya/aakulya2/target/scala-2.11/test-classes/aakulya/CacheActorTest$$anonfun$3$$anonfun$6.class, /home/mykhailoge/eclipse/aakulya/aakulya2/target/scala-2.11/test-classes/aakulya/CacheActorTest$$anonfun$1.class, /home/mykhailoge/eclipse/aakulya/aakulya2/target/scala-2.11/test-classes/aakulya/CacheActorTest$$anonfun$3.class, /home/mykhailoge/eclipse/aakulya/aakulya2/target/scala-2.11/test-classes/aakulya/CacheActorTest$$anonfun$2$$anonfun$5.class, /home/mykhailoge/eclipse/aakulya/aakulya2/target/scala-2.11/test-classes/aakulya/CacheActorTest$$anonfun$1$$anonfun$4.class, /home/mykhailoge/eclipse/aakulya/aakulya2/target/scala-2.11/test-classes/aakulya/CacheActorTest$$anonfun$2.class, /home/mykhailoge/eclipse/aakulya/aakulya2/target/scala-2.11/test-classes/aakulya/CacheActorTest.class)[0m
+[0m[[0mdebug[0m] [0mExternal API changes: API Changes: Set(NamesChange(aakulya.CachedFunction$,ModifiedNames(regularNames = notify, CacheBuilder, duration, autoUpdate, wait, $asInstanceOf, equals, asInstanceOf, &, synchronized, $isInstanceOf, notifyAll, CacheSettings, isInstanceOf, <init>, apply$default$2, apply, ==, clone, apply$default$1, toString, !=, getClass, ne, cacheSettings, eq, ##, finalize, hashCode, implicitNames = )), NamesChange(aakulya.CachedFunction,ModifiedNames(regularNames = notify, CacheBuilder, duration, autoUpdate, wait, $asInstanceOf, equals, asInstanceOf, &, synchronized, $isInstanceOf, notifyAll, CacheSettings, isInstanceOf, <init>, apply$default$2, apply, ==, clone, apply$default$1, toString, !=, getClass, ne, cacheSettings, eq, ##, finalize, hashCode, implicitNames = )), NamesChange(aakulya.CacheSettings$,ModifiedNames(regularNames = notify, duration, autoUpdate, wait, $asInstanceOf, SimpleCachedFunction, CachedFunction, equals, asInstanceOf, &, synchronized, $isInstanceOf, >>, notifyAll, CacheSettings, fromCache, isInstanceOf, keyFunction, <init>, apply$default$2, calculate, apply, ==, clone, function, apply$default$1, toString, !=, getClass, ne, cacheSettings, eq, ##, finalize, hashCode, implicitNames = )), NamesChange(aakulya.CacheSettings,ModifiedNames(regularNames = notify, duration, autoUpdate, wait, $asInstanceOf, SimpleCachedFunction, CachedFunction, equals, asInstanceOf, &, synchronized, $isInstanceOf, >>, notifyAll, CacheSettings, fromCache, isInstanceOf, keyFunction, <init>, apply$default$2, calculate, apply, ==, clone, function, apply$default$1, toString, !=, getClass, ne, cacheSettings, eq, ##, finalize, hashCode, implicitNames = )))[0m
+[0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set(/home/mykhailoge/eclipse/aakulya/aakulya2/src/test/scala/aakulya/CacheActorTest.scala)[0m
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m	product: Set(/home/mykhailoge/eclipse/aakulya/aakulya2/src/test/scala/aakulya/CacheActorTest.scala)[0m
+[0m[[0mdebug[0m] [0m	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m	external source: Set(/home/mykhailoge/eclipse/aakulya/aakulya2/src/test/scala/aakulya/CacheActorTest.scala)[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/home/mykhailoge/eclipse/aakulya/aakulya2/src/test/scala/aakulya/CacheActorTest.scala)[0m
+[0m[[0mdebug[0m] [0mRecompiling all 1 sources: invalidated sources (1) exceeded 50.0% of all sources[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to /home/mykhailoge/eclipse/aakulya/aakulya2/target/scala-2.11/test-classes...[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.2[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.2[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 1539435c, interfacing (CompilerInterface) with Scala compiler version 2.11.2[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rhino.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/classes:/home/mykhailoge/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.2.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/home/mykhailoge/eclipse/aakulya/aakulya2/target/scala-2.11/test-classes:/home/mykhailoge/eclipse/aakulya/aakulya2/target/scala-2.11/classes:/home/mykhailoge/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.6.jar:/home/mykhailoge/.ivy2/cache/com.typesafe/config/bundles/config-1.2.1.jar:/home/mykhailoge/.ivy2/cache/junit/junit/jars/junit-4.11.jar:/home/mykhailoge/.ivy2/cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.3.jar:/home/mykhailoge/.ivy2/cache/com.typesafe.akka/akka-testkit_2.11/jars/akka-testkit_2.11-2.3.6.jar:/home/mykhailoge/.ivy2/cache/org.scalatest/scalatest_2.11/bundles/scalatest_2.11-2.2.2.jar:/home/mykhailoge/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.2.jar:/home/mykhailoge/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.2.jar[0m
+[0m[[33mwarn[0m] [0mthere was one feature warning; re-run with -feature for details[0m
+[0m[[33mwarn[0m] [0mone warning found[0m
+[0m[[0mdebug[0m] [0mScala compilation took 0.646092234 s[0m
+[0m[[0mdebug[0m] [0mNew invalidations:[0m
+[0m[[0mdebug[0m] [0m	Set()[0m
+[0m[[0mdebug[0m] [0mInitial set of included nodes: Set()[0m
+[0m[[0mdebug[0m] [0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
+[0m[[0mdebug[0m] [0m	Set()[0m
+[0m[[0mdebug[0m] [0mAll newly invalidated sources after taking into account (previously) recompiled sources:Set()[0m

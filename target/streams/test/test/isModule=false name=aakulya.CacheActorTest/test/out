@@ -1,0 +1,5 @@
+[0m[[0minfo[0m] [0m[32mCacheActorTest:[0m[0m
+[0m[[0minfo[0m] [0m[32m- get value which is not in the cache[0m[0m
+[0m[[0minfo[0m] [0m[32m- get value from two times. Second value have to be cached[0m[0m
+[0m[[0minfo[0m] [0m[31m- Value should be remove from cache after 5 seconds (cache duration=4 seconds) *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  1422346813133 was not greater than 1422346813133 (CacheActorTest.scala:51)[0m[0m
