@@ -5,10 +5,13 @@ import scala.concurrent.duration._
 
 class CacheSettings(
   val duration: FiniteDuration,
-  val autoUpdate: Boolean)
+  val isAutoUpdate: Boolean)
 
 object CacheSettings {
-  def apply(duration: FiniteDuration = 5 minutes, autoUpdate: Boolean = false): CacheSettings = {
+  val DEFAULT_DURATION = 5 minutes
+  val DEFAULT_UPDATE = false
+  
+  def apply(duration: FiniteDuration = DEFAULT_DURATION, autoUpdate: Boolean = DEFAULT_UPDATE): CacheSettings = {
     new CacheSettings(duration, autoUpdate)
   }
 }

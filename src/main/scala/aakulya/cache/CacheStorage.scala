@@ -3,4 +3,9 @@ package cache
 
 import scala.collection._
 
-private[cache] class CacheStorage[Key, Value] extends mutable.HashMap[Key, Value]
+trait CacheStorage{
+  def clear
+  def remove(key: (String, String))
+  def put[A](key: (String, String), value: A)
+  def get[A](key: (String, String)): A
+}

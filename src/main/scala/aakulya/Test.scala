@@ -1,22 +1,22 @@
 package aakulya
 
 import akka.actor.ActorSystem
-import aakulya.cache.CacheSystem
 import aakulya.cache.CachedFunction
+import java.util.Calendar
+import scala.concurrent.duration._
+import aakulya.cache.CacheBuilder
 
 object Test {
-   def main(args: Array[String]): Unit = {
-    implicit val cacheSystem = CacheSystem("cache")
-     
-    val cached = CachedFunction{
-      params: (Int, Int) =>
-         params._1 + "@" + params._2
-      }
-    println(cached >> (1, 1))
-    println(cached >> (1, 2))
-    println(cached >> (2, 2))
+  def currentTime = Calendar.getInstance.getTimeInMillis
+  def testFunction(key: String) = currentTime
+  implicit val cacheSystem = ActorSystem("cache")
+  val cachedFunction = CacheBuilder(4 seconds, true) & { key: String => testFunction(key) }
 
-    println(cached >> (1, 1))
-    println(cached >> (1, 2))
-    println(cached >> (2, 2))  }
+  def main(args: Array[String]): Unit = {
+    val value_1 = cachedFunction >> "1"
+    Thread.sleep(2000)
+    val value_2 = cachedFunction.getByParams("1")
+    Thread.sleep(3000)
+    val value_3 = cachedFunction.getByParams("1")
+  }
 }

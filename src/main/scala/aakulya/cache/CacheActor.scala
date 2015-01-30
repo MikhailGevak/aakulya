@@ -1,24 +1,34 @@
-package aakulya.cache
+package aakulya
+package cache
 
-import akka.actor.Actor
+import akka.actor.{Actor, Props}
 import scala.concurrent.duration._
 
 object CacheActor {
-  case class GetValue(key: Any)
-  case class PutValue(key: Any, value: Any, settings: CacheSettings)
-  case class CacheValue(value: Option[Any])
+  //input messages
   case class ClearCache()
+  case class RemoveValue(key: String)
+  case class PutValue(key: String, function: Unit => Any, returnValue: Boolean = true)
+  case class GetValue(key: String)
+  
+  def props[Value](cacheStorage: CacheStorage, functionId: String): Props = Props(classOf[CacheActor], cacheStorage, functionId)
 }
 
-private[cache] class CacheActor extends Actor {
+private[cache] class CacheActor(cacheStorage: CacheStorage, functionId: String) extends Actor {
   import CacheActor._
-  val cacheStorage = new CacheStorage[Any, Any]
-  
+
   def receive = {
-    case GetValue(key) =>
-      sender ! CacheValue(cacheStorage.get(key))
-    case PutValue(key, value, settings) =>
-      cacheStorage.put(key, value)
+    case ClearCache() =>
+      cacheStorage.clear
+    case RemoveValue(key: String) =>
+      cacheStorage.remove((functionId, key))
+    case PutValue(key, function, returnValue) =>
+      val value = function.apply()
       
+      cacheStorage.put((functionId, key), value)
+      if (returnValue) sender ! Option(value)
+    case GetValue(key) =>
+      sender ! cacheStorage.get((functionId, key))
+    case other => println(s"Unhandled message: $other")
   }
 }
