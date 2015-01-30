@@ -8,3 +8,12 @@ compile
 test
 compile
 test
+test -feature
+compile
+test
+test-only *.MultiCacheActorTest
+projects
+test-only *.MultiCacheActorTest
+test
+test-only *.SmokeCacheActorTest
+test
